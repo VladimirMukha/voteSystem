@@ -1,29 +1,22 @@
 package model;
 
-public class Meal {
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+public class Meal extends BaseModel {
     private Integer price;
     private String name;
-
-    public Meal() {}
+    private Restaurant restaurant;
 
     public Meal(Integer id, Integer price, String name) {
+        super(id);
         this.price = price;
-        this.name = name;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
     }
 }

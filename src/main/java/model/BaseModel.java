@@ -1,10 +1,11 @@
 package model;
 
-public class BaseModel {
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+public abstract class BaseModel {
     public static final int START_SEQ = 0;
     private Integer id;
-
-    protected BaseModel() {}
 
     protected BaseModel(Integer id) {
         this.id = id;

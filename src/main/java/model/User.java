@@ -1,20 +1,18 @@
 package model;
 
-public class User {
-    private String name;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-    public User() {}
+@Getter
+@Setter
+@ToString(exclude = "name")
+@NoArgsConstructor
+public class User extends BaseModel {
+    private String name;
 
     public User(Integer id, String name) {
         this.name = name;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
-
