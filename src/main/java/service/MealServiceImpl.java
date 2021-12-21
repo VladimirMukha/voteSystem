@@ -1,11 +1,13 @@
 package service;
 
 import model.Meal;
+import org.springframework.stereotype.Service;
 import repository.MealRepository;
 import repository.RestaurantRepository;
 
 import java.util.List;
 
+@Service
 public class MealServiceImpl implements MealService {
     private final MealRepository mealRepository;
     private final RestaurantRepository restaurantRepository;

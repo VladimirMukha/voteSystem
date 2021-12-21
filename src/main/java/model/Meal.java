@@ -4,11 +4,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
+@Table(name = "menu")
+@Entity
 public class Meal extends BaseModel {
     private Integer price;
     private String name;

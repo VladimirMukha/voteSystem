@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
@@ -13,6 +15,8 @@ import java.util.Set;
 @Setter
 @ToString
 @NoArgsConstructor
+@Entity
+@Table(name = "users")
 public class User extends BaseModel {
     private Set<Role> roles;
     private String name;

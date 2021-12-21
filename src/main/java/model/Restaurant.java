@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -14,8 +15,12 @@ import java.util.Set;
 @Setter
 @ToString
 @NoArgsConstructor
+@Entity
+@Table(name = "restaurants")
 public class Restaurant extends BaseModel {
+    @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Meal> menu = new HashSet<>();
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<User> userList;
     private String name;
     private Integer countVotes;
