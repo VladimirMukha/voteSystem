@@ -22,7 +22,9 @@ public class Restaurant extends BaseModel {
     private Set<Meal> menu = new HashSet<>();
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<User> userList;
+    @Column(name = "name")
     private String name;
+    @Column(name = "count_votes")
     private Integer countVotes;
 
     public Restaurant(Integer id, String name) {

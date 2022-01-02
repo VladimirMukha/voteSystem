@@ -17,5 +17,5 @@ public interface RestaurantService {
 
     List<User> getAllVotedUsers(Restaurant restaurant);
 
-    List<Meal> getMenuByRestaurant(Restaurant restaurant);
+    List<Meal> getMenuForRestaurant(Restaurant restaurant);
 }

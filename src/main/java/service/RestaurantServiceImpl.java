@@ -9,7 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 import repository.RestaurantRepository;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RestaurantServiceImpl implements RestaurantService {
@@ -44,12 +46,13 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public List<User> getAllVotedUsers(Restaurant restaurant) {
-        return null;
+        Assert.notNull(restaurant, "Restaurant  must not by null");
+        return repository.getById(restaurant.getId()).getUserList();
     }
 
     @Transactional
-    public List<Meal> getMenuByRestaurant(Restaurant restaurant) {
+    public List<Meal> getMenuForRestaurant(Restaurant restaurant) {
         Assert.notNull(restaurant, "ресторан не найден!!!");
-        return null;
+        return repository.getById(restaurant.getId()).getMenu().stream().collect(Collectors.toList());
     }
 }

@@ -16,5 +16,5 @@ public interface UserService {
 
     User update(User user);
 
-    void vote(Restaurant restaurant, Integer loggingUserId);
+    void vote(Restaurant restaurant, Integer userLogin);
 }
